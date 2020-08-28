@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 2020_08_27_022126) do
     t.string "username"
     t.string "email"
     t.string "password_digest"
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_posts_on_user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
