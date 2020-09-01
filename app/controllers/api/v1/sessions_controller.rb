@@ -14,8 +14,8 @@ class Api::V1::SessionsController < ApplicationController
     def destroy
         session.clear
         render json: {
-            console.log("You have been logged out")
-        }
+            notice: 'You have been logged out'
+        }, status: :ok
     end
 
     def get_current_user
