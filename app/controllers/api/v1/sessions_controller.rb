@@ -12,7 +12,10 @@ class Api::V1::SessionsController < ApplicationController
     end
 
     def destroy
-
+        session.clear
+        render json: {
+            notice: 'You have been logged out'
+        }, status: :ok
     end
 
     def get_current_user
